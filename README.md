@@ -30,4 +30,4 @@
 
 ![公众号二维码](./image/gongzhonghao.jpg)
 ### 个人微信
-![微信二维码](./image/wechat.jpg)
+![微信二维码](./image/wechat-zhangdeyi.jpg)
