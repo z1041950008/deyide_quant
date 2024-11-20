@@ -161,5 +161,5 @@ for stock_code in stock_df['代码']:
         print(f"获取股票 {stock_code} 数据时发生错误: {e}")
         continue
 
-print(stock_df)
+# print(stock_df)
 stock_df.to_excel("excel_stock/bolling_bands_select_every_work_day_basic_score.xlsx")
