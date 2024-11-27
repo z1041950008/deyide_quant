@@ -1,0 +1,199 @@
+
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>回测报告 (2024-11-01 至 2024-11-22)</title>
+            <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+            <style>
+                body { font-family: Arial, sans-serif; margin: 20px; }
+                .container { max-width: 1200px; margin: 0 auto; }
+                table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+                th, td { padding: 12px; text-align: left; border-bottom: 1px solid #ddd; }
+                th { background-color: #f5f5f5; }
+                .summary { background-color: #f8f9fa; padding: 20px; border-radius: 5px; margin-bottom: 20px; }
+                .section { margin-bottom: 30px; }
+                h2 { color: #333; }
+                #return-curve { width: 100%; height: 400px; }
+            </style>
+        </head>
+        <body>
+            <div class="container">
+                <h1>回测报告</h1>
+                
+                <div class="section">
+                    <h2>收益率曲线</h2>
+                    <div id="return-curve"></div>
+                </div>
+                
+                <div class="summary">
+                    <h2>回测概况</h2>
+                    <table>
+                        <tr><td>回测期间</td><td>2024-11-01 至 2024-11-22</td></tr>
+                        <tr><td>初始资金</td><td>1,000,000.00</td></tr>
+                        <tr><td>最终资金</td><td>1,017,480.99</td></tr>
+                        <tr><td>总收益率</td><td>1.75%</td></tr>
+                        <tr><td>年化收益率</td><td>31.38%</td></tr>
+                        <tr><td>夏普比率</td><td>1.16</td></tr>
+                        <tr><td>最大回撤</td><td>3.62%</td></tr>
+                        <tr><td>波动率</td><td>24.44%</td></tr>
+                    </table>
+                </div>
+                
+                <div class="section">
+                    <h2>交易统计</h2>
+                    <table>
+                        <tr><td>总交易次数</td><td>6</td></tr>
+                        <tr><td>盈利交易次数</td><td>1</td></tr>
+                        <tr><td>亏损交易次数</td><td>0</td></tr>
+                        <tr><td>胜率</td><td>100.00%</td></tr>
+                        <tr><td>平均持仓周期</td><td>21.0天</td></tr>
+                        <tr><td>最长持仓周期</td><td>21天</td></tr>
+                        <tr><td>平均持仓数量</td><td>4.4</td></tr>
+                        <tr><td>最大持仓数量</td><td>5</td></tr>
+                    </table>
+                </div>
+
+                <div class="section">
+                    <h2>交易记录</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>日期</th>
+                                <th>股票代码</th>
+                                <th>股票名称</th>
+                                <th>操作</th>
+                                <th>价格</th>
+                                <th>数量</th>
+                                <th>盈亏</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            <tr>
+                                <td>2024-11-01</td>
+                                <td>601816</td>
+                                <td>京沪高铁</td>
+                                <td>BUY</td>
+                                <td>5.54</td>
+                                <td>54151</td>
+                                <td>0.00</td>
+                            </tr>
+
+                            <tr>
+                                <td>2024-11-01</td>
+                                <td>601600</td>
+                                <td>中国铝业</td>
+                                <td>BUY</td>
+                                <td>7.94</td>
+                                <td>37783</td>
+                                <td>0.00</td>
+                            </tr>
+
+                            <tr>
+                                <td>2024-11-01</td>
+                                <td>600690</td>
+                                <td>海尔智家</td>
+                                <td>BUY</td>
+                                <td>29.39</td>
+                                <td>10207</td>
+                                <td>0.00</td>
+                            </tr>
+
+                            <tr>
+                                <td>2024-11-01</td>
+                                <td>601699</td>
+                                <td>潞安环能</td>
+                                <td>BUY</td>
+                                <td>14.66</td>
+                                <td>20463</td>
+                                <td>0.00</td>
+                            </tr>
+
+                            <tr>
+                                <td>2024-11-01</td>
+                                <td>601607</td>
+                                <td>上海医药</td>
+                                <td>BUY</td>
+                                <td>19.54</td>
+                                <td>15353</td>
+                                <td>0.00</td>
+                            </tr>
+
+                            <tr>
+                                <td>2024-11-22</td>
+                                <td>601607</td>
+                                <td>上海医药</td>
+                                <td>SELL</td>
+                                <td>21.70</td>
+                                <td>15353</td>
+                                <td>33162.48</td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <script>
+                // 初始化收益率曲线图表
+                var chartDom = document.getElementById('return-curve');
+                var myChart = echarts.init(chartDom);
+         var dates = ['2024-11-01', '2024-11-04', '2024-11-05', '2024-11-06', '2024-11-07', '2024-11-08', '2024-11-11', '2024-11-12', '2024-11-13', '2024-11-14', '2024-11-15', '2024-11-18', '2024-11-19', '2024-11-20', '2024-11-21', '2024-11-22', '2024-11-22'];  var returns = [0.0, 2.328306436538696e-14, 0.6825709999999963, 2.4763580000000074, 1.710826000000001, 5.573556000000006, 4.918005999999982, 3.769351000000001, 3.9150389999999895, 4.721729000000003, 3.7944340000000083, 3.3487070000000063, 2.6100939999999713, 3.1370609999999868, 4.500196999999997, 5.232709000000009, 1.7480989999999759]; 
+                var option = {
+                    title: {        
+                        text: '策略收益率曲线',
+                        left: 'center'
+                    },
+                    tooltip: {
+                        trigger: 'axis',
+                        formatter: function(params) {
+                            return params[0].name + '<br/>' +
+                                   params[0].seriesName + ': ' + params[0].value.toFixed(2) + '%';
+                        }
+                    },
+                    xAxis: {
+                        type: 'category',
+                        data: dates,
+                        axisLabel: {
+                            rotate: 45
+                        }
+                    },
+                    yAxis: {
+                        type: 'value',
+                        name: '收益率(%)',
+                        axisLabel: {
+                            formatter: '{value}%'
+                        }
+                    },
+                    series: [
+                        {
+                            name: '收益率',
+                            type: 'line',
+                            data: returns,
+                            smooth: true,
+                            lineStyle: {
+                                width: 2
+                            },
+                            areaStyle: {
+                                opacity: 0.2
+                            }
+                        }
+                    ],
+                    grid: {
+                        left: '3%',
+                        right: '4%',
+                        bottom: '15%',
+                        containLabel: true
+                    }
+                };
+                myChart.setOption(option);
+                
+                // 响应窗口大小变化
+                window.addEventListener('resize', function() {  
+                    myChart.resize();
+                });
+            </script>
+        </body>
+        </html>
+        
