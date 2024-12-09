@@ -96,6 +96,7 @@ def main():
     stock_list = stock_list[~stock_list['代码'].str.startswith('8')]
     stock_list = stock_list[~stock_list['代码'].str.startswith('9')]
     stock_list = stock_list[~stock_list['代码'].str.startswith('4')]
+
     stock_codes = stock_list['代码'].tolist()
     # stock_codes = stock_codes[:200]
 

@@ -18,6 +18,8 @@ stock_list = stock_list[~stock_list['代码'].str.startswith('688')]
 stock_list = stock_list[~stock_list['代码'].str.startswith('8')]
 stock_list = stock_list[~stock_list['代码'].str.startswith('9')]
 stock_list = stock_list[~stock_list['代码'].str.startswith('4')]
+stock_list = stock_list[~stock_list['代码'].str.contains('ST')]
+
 stock_codes = stock_list['代码'].tolist() # 示例：前50只股票
 
 def get_technical_indicators(stock_data):
